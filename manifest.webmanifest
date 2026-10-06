@@ -1,0 +1,11 @@
+{
+  "name": "API-CUADERNO",
+  "short_name": "API-CUADERNO",
+  "description": "Cuaderno digital de campo para apicultura.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#0F172A",
+  "lang": "es",
+  "icons": []
+}
