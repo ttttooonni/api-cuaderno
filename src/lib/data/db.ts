@@ -6,7 +6,7 @@ import type {
 } from './types';
 
 export const DB_NAME = 'api-cuaderno';
-export const DB_VERSION = 1;
+export const DB_VERSION = 3;
 
 export const STORES = {
   APIARIES: 'apiaries',
@@ -42,7 +42,7 @@ interface ApiCuadernoDB extends DBSchema {
 
 export async function getDb(): Promise<IDBPDatabase<ApiCuadernoDB>> {
   return openDB<ApiCuadernoDB>(DB_NAME, DB_VERSION, {
-    upgrade(db) {
+    upgrade(db, oldVersion) {
       if (!db.objectStoreNames.contains(STORES.APIARIES)) db.createObjectStore(STORES.APIARIES);
       if (!db.objectStoreNames.contains(STORES.COLONIES)) {
         const s = db.createObjectStore(STORES.COLONIES);
